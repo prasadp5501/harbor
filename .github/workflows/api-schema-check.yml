@@ -13,9 +13,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
           fetch-depth: 0
-      - uses: delimit-ai/delimit-action@v1
+      - uses: delimit-ai/delimit-action@afa76ce3d1caa90a8de6bfd038471af672f60e90
         with:
           spec: api/v2.0/swagger.yaml
