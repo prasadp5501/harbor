@@ -51,11 +51,11 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.26
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
         with:
            go-version: 1.26.3
         id: go
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
          path: src/github.com/goharbor/harbor
       - name: setup env
@@ -98,7 +98,7 @@ jobs:
           bash ./tests/showtime.sh ./tests/ci/ut_run.sh $IP
           df -h
       - name: Codecov For BackEnd
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@75cd11691c0faa626561e295848008c8a7dddffe
         with:
           files: ./src/github.com/goharbor/harbor/profile.cov
           flags: unittests
@@ -113,11 +113,11 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.23
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
         with:
           go-version: 1.23.2
         id: go
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           path: src/github.com/goharbor/harbor
       - name: setup env
@@ -159,7 +159,7 @@ jobs:
           bash ./tests/showtime.sh ./tests/ci/api_run.sh DB $IP
           df -h
       - name: upload_logs
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         if: always()
         with:
           name: db-api-harbor-logs.tar.gz
@@ -175,11 +175,11 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.23
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
         with:
           go-version: 1.23.2
         id: go
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           path: src/github.com/goharbor/harbor
       - name: setup env
@@ -222,7 +222,7 @@ jobs:
           df -h
       - name: upload_logs
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: proxy-api-harbor-logs.tar.gz
           path: /home/ubuntu/_work/harbor/harbor/src/github.com/goharbor/harbor/integration_logs.tar.gz
@@ -236,11 +236,11 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.23
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
         with:
           go-version: 1.23.2
         id: go
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           path: src/github.com/goharbor/harbor
       - name: setup env
@@ -281,7 +281,7 @@ jobs:
           df -h
       - name: upload_logs
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: ldap-api-harbor-logs.tar.gz
           path: /home/ubuntu/_work/harbor/harbor/src/github.com/goharbor/harbor/integration_logs.tar.gz
@@ -295,11 +295,11 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.23
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
         with:
           go-version: 1.23.2
         id: go
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           path: src/github.com/goharbor/harbor
       - name: setup env
@@ -346,10 +346,10 @@ jobs:
       - oracle-vm-24cpu-96gb-x86-64
     timeout-minutes: 100
     steps:
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version: '18'
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           path: src/github.com/goharbor/harbor
       - name: script
@@ -360,7 +360,7 @@ jobs:
           bash ./tests/showtime.sh ./tests/ci/ui_ut_run.sh
           df -h
       - name: Codecov For UI
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@75cd11691c0faa626561e295848008c8a7dddffe
         with:
           files: ./src/github.com/goharbor/harbor/src/portal/coverage/lcov.info
           flags: unittests
